@@ -7,8 +7,9 @@ export class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
-
+    
     render() {
+
         return (
             <div className="dashboard">
                 <div className="dashboard-username">

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
+import Timer from './Timer';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
@@ -9,6 +10,7 @@ import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
+    
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn && !this.props.loggedIn) {
             // When we are logged in, refresh the auth token periodically
@@ -41,6 +43,7 @@ export class App extends React.Component {
     render() {
         return (
             <div className="app">
+                <Timer />
                 <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
